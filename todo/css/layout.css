@@ -1,0 +1,143 @@
+.header {
+  height: 6vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #a54798;
+  color: #fff;
+}
+
+.row, .column {
+  display: flex;
+}
+.row {
+  flex-direction: row;
+}
+.column {
+  flex-direction: column;
+}
+.f1 {
+  flex: 1;
+}
+.f2 {
+  flex: 2;
+}
+.f3 {
+  flex: 3;
+}
+.f4 {
+  flex: 4;
+}
+
+
+
+.navigation {
+  width: 20vw;
+  height: 94vh;
+  background-color: #d8b2d3;
+}
+
+.create-new-list {
+  font-size: 1.5em;
+  padding: .5em;
+  border-bottom: 2px solid black;
+
+}
+
+.todo-list-container {
+  width: 80vw;
+}
+
+.todo-list-list__item {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+  background-color: #a06c99;
+}
+.todo-list-list__item:hover {
+  background-color: #ca9ec4;
+}
+.todo-list-list__title {
+  font-size: 1em;
+  line-height: 1.5;
+}
+.todo-list-list_link{
+  color: white;
+  flex: 1;
+  text-decoration: none;
+  justify-content: space-between;
+}
+.todo-list-list__item:hover > .todo-list-list_link {
+  color: white;
+}
+.todo-list__delete-btn {
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  width: 25px;
+  height: 25px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todo-list__delete-btn:hover {
+  background-color: white;
+  color: #ca9ec4;
+}
+
+.create-new-todo {
+
+}
+.create-new-todo_input {
+  font-size: 1.5em;
+  border: none;
+  border-bottom: 2px solid black;
+  padding: 0.5em;
+  flex: 1;
+}
+
+/*=======================todo-list__item=============================*/
+
+.todo-list__item {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+  background-color: #f3ddd6;
+}
+.todo-list__item:hover {
+  background-color: #fbe4dd;
+}
+.todo-list__item:hover > .todo-item__text {
+  /*color: white;*/
+}
+
+/*=======================todo-list__item=============================*/
+
+.todo-list__item-btn:hover {
+  background-color: white;
+  color: #ca9ec4;
+}
+
+.todo-item__delete-btn {
+  color: black;
+  font-size: 1.2em;
+  font-weight: 600;
+  width: 25px;
+  height: 25px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todo-item__delete-btn:hover {
+  background-color: white;
+  color: #ca9ec4;
+}
