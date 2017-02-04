@@ -5,7 +5,7 @@ The Egyptian software development market suffers from a scarcity of expert talen
 This course is aimed at those who intend to pursue a career in software development, or want to create a low cost MVP for a startup. After this course you should be familiar with the current state of the art, capable of making educated decisions about your development stack.
 
 The structure of this course is largely motivated by the notion that novice developer start out adopting frameworks and using libraries without critically thinking about wether this tool is the right fit for the job.## Course Flow
-* This course will be composed of -12- 13 sessions
+* This course will be composed of 13 sessions
 * Each session will have 2 parts, exercise and discussion
 	* During exercise you will be solving the course assignment
 	* During discussion we will discuss the next assignment
@@ -21,7 +21,7 @@ The structure of this course is largely motivated by the notion that novice deve
 	* If your are incapable of completing the assignment you can be granted the permission to complete it before the next exercise slot.
 * The first session is a discussion only session.
 * The last session is an assignment only session.
-* We should all each pizza at the end of the course.
+* We should all eat pizza at the end of the course.
 ## You will need
 
 * A Laptop with a bash shell (Unix bases OS or Windows 10 with ubuntu terminal)
@@ -52,8 +52,6 @@ In this course we will introduce
 * Modularise your application
 * OOCSS and BEM
 * Build process with task runner
-
-* -Build a Virtual DOM-
 
 ### 2. Pillars of JavaScript: Everything can be Javascript
 

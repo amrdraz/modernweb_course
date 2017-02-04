@@ -3,25 +3,34 @@
   <head>
     <meta charset="utf-8">
     <title>ToDo</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <!-- build:css main.css -->
+    <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/navigation/navigation.css">
+    <link rel="stylesheet" href="/css/navigation/create-list.css">
+    <link rel="stylesheet" href="/css/navigation/todo-list-list.css">
+    <link rel="stylesheet" href="/css/todo-list/create-todo.css">
+    <link rel="stylesheet" href="/css/todo-list/todo-list.css">
+    <link rel="stylesheet" href="/css/todo-list/todo-item.css">
+    <!-- endbuild -->
   </head>
   <body>
-    <div id="appContainer" class="column">
-      <header class="header row">
+    <div id="appContainer" class="col">
+      <header class="header row primary-bg-color">
         <h1 class="header__title">To Do App</h1>
       </header>
       <div class="row">
-        <sidbar class="navigation column">
-          <button type="button" class="create-new-list">Create New List</button>
+        <sidbar class="navigation col f-1">
+          <button type="button" class="create-list secondary-bg-color ">Create New List</button>
           <ul class="todo-list-list">
-            <li class="todo-list-list__item">
+            <li class="todo-list-list__item primary-bg-color">
               <a href="" class="todo-list-list_link row">
                 <span class="todo-list-list__title">First List</span>
                 <button class="todo-list__delete-btn">x</button>
               </a>
             </li>
-            <li class="todo-list-list__item">
+            <li class="todo-list-list__item primary-bg-color">
               <a href="" class="todo-list-list_link row">
                 <span class="todo-list-list__title">Second List</span>
                 <button class="todo-list__delete-btn">x</button>
@@ -29,21 +38,35 @@
             </li>
           </ul>
         </sidbar>
-        <main class="todo-list-container column">
-          <div class="row create-new-todo">
-            <input type="text" class="create-new-todo_input" placeholder="Enter New To Do">
+        <main class="col f-3">
+          <div class="row create-todo">
+            <input type="text" class="create-todo__input" placeholder="Enter New To Do">
+            <button type="button" class="create-todo__submit-btn secondary-bg-color ">+</button>
           </div>
-          <ul class="todo-list column">
-            <li class="todo-list__item"><span class="todo-item__text">Something</span> <button class="todo-item__delete-btn">x</button></li>
-            <li class="todo-list__item"><span class="todo-item__text">Something Else</span><button class="todo-item__delete-btn">x</button></li>
+          <ul class="todo-list col">
+            <li class="todo-list__item">
+              <div class="todo-item">
+                <input class="todo-item__done" type="checkbox">
+                <span class="todo-item__text">Something</span>
+                <button class="todo-item__delete-btn">x</button>
+              </div>
+            </li>
+            <li class="todo-list__item">
+              <div class="todo-item">
+                <input class="todo-item__done" type="checkbox">
+                <span class="todo-item__text">Something Else</span>
+                <button class="todo-item__delete-btn">x</button>
+              </div>
+            </li>
           </ul>
         </main>
       </div>
     </div>
 
-    <script type="text/javascript" src="js/lib/vdom.js"></script>
-    <!-- <script type="text/javascript" src="js/lib/template_parse.js"></script> -->
+    <!-- build:js main.js -->
     <script type="text/javascript" src="js/bootstrap-app.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <!-- endbuild -->
+
   </body>
 </html>
