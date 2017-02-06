@@ -25,15 +25,15 @@
           <button type="button" class="create-list secondary-bg-color ">Create New List</button>
           <ul class="todo-list-list">
             <li class="todo-list-list__item primary-bg-color">
-              <a href="" class="todo-list-list_link row">
-                <span class="todo-list-list__title">First List</span>
-                <button class="todo-list__delete-btn">x</button>
+              <a href="" class="todo-list-list__todo-list">
+                <span class="todo-list-list__todo-list__title">First List</span>
+                <button class="todo-list-list__todo-list__delete-btn">x</button>
               </a>
             </li>
             <li class="todo-list-list__item primary-bg-color">
-              <a href="" class="todo-list-list_link row">
+              <a href="" class="todo-list-list__todo-list">
                 <span class="todo-list-list__title">Second List</span>
-                <button class="todo-list__delete-btn">x</button>
+                <button class="todo-list-list__todo-list__delete-btn">x</button>
               </a>
             </li>
           </ul>
@@ -64,8 +64,9 @@
     </div>
 
     <!-- build:js main.js -->
-    <script type="text/javascript" src="js/bootstrap-app.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/$injector.js"></script>
+    <script type="text/javascript" src="js/todo-list-list.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
     <!-- endbuild -->
 
   </body>
