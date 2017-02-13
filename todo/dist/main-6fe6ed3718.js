@@ -1,1 +1,0 @@
-"use strict";window.App={},function(n){n.App,n.document,n.vdom}(window);
