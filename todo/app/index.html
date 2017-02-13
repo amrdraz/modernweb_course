@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <title>ToDo</title>
     <!-- build:css main.css -->
-    <link rel="stylesheet" href="/css/base.css">
-    <link rel="stylesheet" href="/css/layout.css">
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/navigation/navigation.css">
-    <link rel="stylesheet" href="/css/navigation/create-list.css">
-    <link rel="stylesheet" href="/css/navigation/todo-list-list.css">
-    <link rel="stylesheet" href="/css/todo-list/create-todo.css">
-    <link rel="stylesheet" href="/css/todo-list/todo-list.css">
-    <link rel="stylesheet" href="/css/todo-list/todo-item.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/navigation/navigation.css">
+    <link rel="stylesheet" href="css/navigation/create-list.css">
+    <link rel="stylesheet" href="css/navigation/todo-list-list.css">
+    <link rel="stylesheet" href="css/todo-list/create-todo.css">
+    <link rel="stylesheet" href="css/todo-list/todo-list.css">
+    <link rel="stylesheet" href="css/todo-list/todo-item.css">
     <!-- endbuild -->
   </head>
   <body>
@@ -27,7 +27,7 @@
             <li class="todo-list-list__item primary-bg-color">
               <a href="" class="todo-list-list__todo-list">
                 <span class="todo-list-list__todo-list__title">First List</span>
-                <button class="todo-list-list__todo-list__delete-btn">x</button>
+                <button class="todo-list-list__delete-btn">x</button>
               </a>
             </li>
             <li class="todo-list-list__item primary-bg-color">
@@ -36,6 +36,7 @@
                 <button class="todo-list-list__todo-list__delete-btn">x</button>
               </a>
             </li>
+            
           </ul>
         </sidbar>
         <main class="col f-3">
@@ -64,9 +65,11 @@
     </div>
 
     <!-- build:js main.js -->
-    <script type="text/javascript" src="js/$injector.js"></script>
+    <script type="text/javascript" src="js/observer.js"></script>
+    <script type="text/javascript" src="js/todo-list.js"></script>
     <script type="text/javascript" src="js/todo-list-list.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     <!-- endbuild -->
 
   </body>

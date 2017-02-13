@@ -3,7 +3,6 @@
   display: flex;
   align-items: center;
   padding: 20px;
-
   border-bottom: 1px solid #eee;
   transition: background-color 0.2s;
   background-color: #a06c99;
@@ -24,12 +23,12 @@
   text-decoration: none;
   justify-content: space-between;
 }
-.todo-list-list__todo-list__title {
+.todo-list-list__title {
   font-size: 1em;
   line-height: 1.5;
 }
 
-.todo-list-list__todo-list__delete-btn {
+.todo-list-list__delete-btn {
   color: white;
   font-size: 1.2em;
   font-weight: 700;
@@ -42,7 +41,7 @@
   align-items: center;
 }
 
-.todo-list-list__todo-list__delete-btn:hover {
+.todo-list-list__delete-btn:hover {
   background-color: white;
   color: #ca9ec4;
 }
