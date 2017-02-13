@@ -5,7 +5,7 @@
         "title": "First List",
         "items": [
           {
-            "text": "Somthing",
+            "text": "Somthing Js",
             "done": false
           },{
             "text": "Something else",
