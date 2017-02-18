@@ -2,7 +2,7 @@
   "name": "todo",
   "version": "0.0.0",
   "description": "sample todo",
-  "main": "/js/main.js",
+  "main": "js/main.js",
   "scripts": {
     "start": "gulp serve",
     "build": "gulp build",

@@ -1,49 +1,46 @@
-(function main({App, document, Observer}, two, three) {
-  let state = {
-    "todo_list_list": [
-      {
-        "title": "First List",
-        "items": [
-          {
-            "text": "Somthing Js",
-            "done": false
-          },{
-            "text": "Something else",
-            "done": true
-          }
-        ]
-      },
-      {
-        "title": "Second List",
-        "items": [
-          {
-            "text": "item 1",
-            "done": false
-          },{
-            "text": "item 2",
-            "done": false
-          }
-        ]
+(function main(global) {
+  let {document, $injector} = global
+  $injector.initAll()
+  let App = $injector.get('App')
+  let renderStateToHTML = $injector.get('renderer')
+  let store = $injector.get('store')
+
+  store.setReducer((state={}, action)=>{
+      let actions = {
+        'ADD_TODO_LIST': ({list})=> {
+          state.todo_list_list = [...state.todo_list_list, list]
+        },
+        'REMOVE_TODO_LIST': ({index})=> {
+          let oldList = state.todo_list_list
+          state.todo_list_list = ([...oldList]).splice(index, 1)
+        },
+        'SELECT_TODO_LIST': ({index})=> {
+          state.selected_list = index
+        },
+        'ADD_TODO_ITEM': ({item})=> {
+          let items = state.todo_list_list[state.selected_list].items
+          state.todo_list_list[state.selected_list].items = [...items, item]
+        },
+        'REMOVE_TODO_ITEM': ({index})=> {
+          let items = state.todo_list_list[state.selected_list].items
+          state.todo_list_list[state.selected_list].items = [...items]
+          state.todo_list_list[state.selected_list].items.splice(index, 1)
+        },
+        'TOGGLE_TODO_ITEM': ({index, done})=> {
+          let todo = state.todo_list_list[state.selected_list].items[index]
+          state.todo_list_list[state.selected_list].items[index].done = done
+        },
       }
-    ],
-    "selected_list": 0
-  }
-  function renderStateToHTML(state) {
+      return actions[action.type]?actions[action.type](action):store
+  })
+
+  store.subscribe(state=>{
     document.querySelector('#appContainer').innerHTML = App.render(state)
-  }
-  renderStateToHTML(state)
-
-  Observer.subscribe('action', function HandleAction(action){
-    switch(action.type) {
-      case 'ADD_TODO_LIST':
-      state.todo_list_list.push(action.list)
-      break;
-    }
-    Observer.publish('state.update', state)
   })
 
-  Observer.on('state.update', function(state){
-    renderStateToHTML(state);
-  })
+  document.querySelector('#appContainer').innerHTML = App.render(store.getState())
+  // renderStateToHTML(store.getState())
 
-})(window,2,3)
+  global.TodoListList = $injector.get('TodoListList')
+  global.TodoList = $injector.get('TodoList')
+})(window)
