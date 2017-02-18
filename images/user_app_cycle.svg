@@ -2,52 +2,51 @@
 <!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="-443 -363 1556 1072" enable-background="new -443 -363 1556 1072" xml:space="preserve">
+	 viewBox="-434 -238 794 512" enable-background="new -434 -238 794 512" xml:space="preserve">
 <g transform="translate(0.5,0.5)">
-	<path pointer-events="none" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" d="M515.5-207
-		c239.3,0,359,85,359,255"/>
-	<path pointer-events="none" stroke="#000000" stroke-miterlimit="10" d="M874.5,59.7L866.6,44l7.9,3.9l7.9-3.9L874.5,59.7z"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" d="M59.9-180.1
+		c130.5,0,195.8,46.4,195.8,139"/>
+	<path pointer-events="none" stroke="#000000" stroke-miterlimit="10" d="M255.4-34.8l-4.2-8.5l4.2,2.1l4.2-2.1L255.4-34.8z"/>
 	<g transform="translate(492.5,59.5)">
-		<text transform="matrix(0.7879 0.6159 -0.6159 0.7879 270.3428 -243.9438)" font-family="'Helvetica'" font-size="26.925">Renders</text>
+		<text transform="matrix(0.7879 0.6159 -0.6159 0.7879 -297.8795 -227.351)" font-family="'Helvetica'" font-size="14.6759">Renders</text>
 	</g>
-	<path pointer-events="none" fill="#DAE8FC" d="M183.4-296.8h305.2c14.9,0,26.9,12.1,26.9,26.9v125.7c0,14.9-12.1,26.9-26.9,26.9
-		H183.4c-14.9,0-26.9-12.1-26.9-26.9v-125.7C156.5-284.7,168.6-296.8,183.4-296.8z"/>
+	<path pointer-events="none" fill="#DAE8FC" d="M-121.3-229.1H45c8,0,14.6,6.6,14.6,14.6v68.5c0,8-6.6,14.6-14.6,14.6h-166.3
+		c-8,0-14.6-6.6-14.6-14.6v-68.5C-135.9-222.5-129.3-229.1-121.3-229.1z"/>
 	<g transform="translate(304.5,32.5)">
-		<text transform="matrix(1 0 0 1 -3.6642 -224.9153)" fill="#4D4D4D" font-family="'Helvetica-Bold'" font-size="31.4125">Data</text>
+		<text transform="matrix(1 0 0 1 -361.6751 -204.6942)" fill="#4D4D4D" font-family="'Helvetica-Bold'" font-size="17.1199">Data</text>
 	</g>
-	<path pointer-events="none" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" d="M874.5,241.8
-		c0,179.5-114.9,269.2-344.7,269.2"/>
-	<path pointer-events="none" stroke="#000000" stroke-miterlimit="10" d="M518,511l15.7-7.9l-3.9,7.9l3.9,7.9L518,511z"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" d="M255.4,64.4
+		c0,97.8-62.7,146.8-188,146.8"/>
+	<path pointer-events="none" stroke="#000000" stroke-miterlimit="10" d="M61.3,211.1l8.5-4.2l-2.1,4.2l2.1,4.2L61.3,211.1z"/>
 	<g transform="translate(507.5,324.5)">
-		<text transform="matrix(0.794 -0.6079 0.6079 0.794 275.0513 160.3549)" font-family="'Helvetica'" font-size="26.925">Sees</text>
+		<text transform="matrix(0.794 -0.6079 0.6079 0.794 -302.1413 -127.5849)" font-family="'Helvetica'" font-size="14.6739">Sees</text>
 	</g>
-	<path pointer-events="none" fill="#DAE8FC" d="M721.9,62.2h305.1c14.9,0,26.9,12.1,26.9,26.9v125.6c0,14.9-12.1,26.9-26.9,26.9
-		H721.9c-14.9,0-26.9-12.1-26.9-26.9V89.2C695,74.3,707.1,62.2,721.9,62.2z"/>
+	<path pointer-events="none" fill="#DAE8FC" d="M172.2-33.4h166.3c8,0,14.6,6.6,14.6,14.6v68.5c0,8-6.6,14.6-14.6,14.6H172.2
+		c-8,0-14.6-6.6-14.6-14.6v-68.3C157.6-26.8,164.2-33.4,172.2-33.4z"/>
 	<g transform="translate(543.5,192.5)">
-		<text transform="matrix(1 0 0 1 294.3629 -25.9154)" fill="#4D4D4D" font-family="'Helvetica-Bold'" font-size="31.4125">View</text>
+		<text transform="matrix(1 0 0 1 -307.9954 -169.0379)" fill="#4D4D4D" font-family="'Helvetica-Bold'" font-size="17.1199">View</text>
 	</g>
-	<path pointer-events="none" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" d="M156.5,511
-		c-239.3,0-359-85-359-255"/>
-	<path pointer-events="none" stroke="#000000" stroke-miterlimit="10" d="M-202.5,244.3l7.9,15.7l-7.9-3.9l-7.9,3.9L-202.5,244.3z"
-		/>
+	<path pointer-events="none" fill="none" stroke="#EABF0A" stroke-width="4" stroke-miterlimit="10" d="M-135.9,211.1
+		c-130.5,0-195.8-46.4-195.8-139"/>
+	<path pointer-events="none" fill="#EABF0A" d="M-331.4,65.8l4.2,8.5l-4.2-2.1l-4.2,2.1L-331.4,65.8z"/>
 	<g transform="translate(96.5,320.5)">
-		<text transform="matrix(0.7815 0.6239 -0.6239 0.7815 -279.4285 111.409)" font-family="'Helvetica'" font-size="26.925">Triggers</text>
+		<text transform="matrix(0.7815 0.6239 -0.6239 0.7815 -417.327 -152.44)" font-family="'Helvetica-Bold'" font-size="14.1336">Triggers</text>
 	</g>
-	<path pointer-events="none" fill="#DAE8FC" d="M183.4,421.2h305.2c14.9,0,26.9,12.1,26.9,26.9v125.7c0,14.9-12.1,26.9-26.9,26.9
-		H183.4c-14.9,0-26.9-12.1-26.9-26.9V448.2C156.5,433.3,168.6,421.2,183.4,421.2z"/>
+	<path pointer-events="none" fill="#DAE8FC" d="M-121.3,162.1H45c8,0,14.6,6.6,14.6,14.6v68.5c0,8-6.6,14.6-14.6,14.6h-166.3
+		c-8,0-14.6-6.6-14.6-14.6v-68.5C-135.9,168.7-129.3,162.1-121.3,162.1z"/>
 	<g transform="translate(303.5,352.5)">
-		<text transform="matrix(1 0 0 1 -3.546 173.0846)" fill="#4D4D4D" font-family="'Helvetica-Bold'" font-size="31.4125">User</text>
+		<text transform="matrix(1 0 0 1 -361.1536 -133.3836)" fill="#4D4D4D" font-family="'Helvetica-Bold'" font-size="17.1199">User</text>
 	</g>
-	<path pointer-events="none" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" d="M-202.5,62.2
-		c0-179.5,114.9-269.2,344.7-269.2"/>
-	<path pointer-events="none" stroke="#000000" stroke-miterlimit="10" d="M154-207l-15.7,7.9l3.9-7.9l-3.9-7.9L154-207z"/>
+	<path pointer-events="none" fill="none" stroke="#EABF0A" stroke-width="4" stroke-miterlimit="10" d="M-331.4-33.4
+		c0-97.8,62.7-146.8,188-146.8"/>
+	<path pointer-events="none" fill="#EABF0A" d="M-137.3-180.1l-8.5,4.2l2.1-4.2l-2.1-4.2L-137.3-180.1z"/>
 	<g transform="translate(86.5,72.5)">
-		<text transform="matrix(0.6099 -0.7925 0.7925 0.6099 -283.0145 -150.877)" font-family="'Helvetica'" font-size="26.925">Updates</text>
+		<text transform="matrix(0.6099 -0.7925 0.7925 0.6099 -414.7327 -182.5457)" font-family="'Helvetica-Bold'" font-size="14.1339">Updates</text>
 	</g>
-	<path pointer-events="none" fill="#DAE8FC" d="M-355.1,62.2h305.2c14.9,0,26.9,12.1,26.9,26.9v125.6c0,14.9-12.1,26.9-26.9,26.9
-		h-305.2c-14.9,0-26.9-12.1-26.9-26.9V89.2C-382,74.3-369.9,62.2-355.1,62.2z"/>
+	<path pointer-events="none" fill="#F9F3D9" d="M-414.5-33.4h166.3c8,0,14.6,6.6,14.6,14.6v68.5c0,8-6.6,14.6-14.6,14.6h-166.3
+		c-8,0-14.6-6.6-14.6-14.6v-68.3C-429.4-26.8-422.8-33.4-414.5-33.4z"/>
 	<g transform="translate(21.5,192.5)">
-		<text transform="matrix(1 0 0 1 -355.104 -25.9154)" fill="#4D4D4D" font-family="'Helvetica-Bold'" font-size="31.4125">Action (Function)</text>
+		<text transform="matrix(1 0 0 1 -424.4466 -169.0379)" fill="#4D4D4D" font-family="'Helvetica-Bold'" font-size="17.1199">Action (Function)</text>
 	</g>
 </g>
 </svg>

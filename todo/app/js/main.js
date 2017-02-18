@@ -1,4 +1,4 @@
-(function functionName({document, App, Observer}) {
+(function main({App, document, Observer}, two, three) {
   let state = {
     "todo_list_list": [
       {
@@ -33,4 +33,17 @@
   }
   renderStateToHTML(state)
 
-})(window)
+  Observer.subscribe('action', function HandleAction(action){
+    switch(action.type) {
+      case 'ADD_TODO_LIST':
+      state.todo_list_list.push(action.list)
+      break;
+    }
+    Observer.publish('state.update', state)
+  })
+
+  Observer.on('state.update', function(state){
+    renderStateToHTML(state);
+  })
+
+})(window,2,3)

@@ -1,10 +1,10 @@
 (function functionName(global) {
   let Observer = global.Observer;
   global.TodoListList = {
-      state: {},
+      // localState: {},
       render(todo_list_list) {
         return `
-        <button type="button" class="create-list secondary-bg-color ">Create New List</button>
+        <button onclick="TodoListList.createList()" type="button" class="create-list secondary-bg-color ">Create New List</button>
         <ul class="todo-list-list">
             ${todo_list_list.map((list, i)=>{
               return `<li class="todo-list-list__item primary-bg-color">
@@ -16,6 +16,17 @@
             }).join("")}
         </ul>
         `
+      },
+      createList() {
+        let title = prompt('New list title is?')
+        let action = {
+          type: 'ADD_TODO_LIST',
+          list: {
+            title,
+            items: []
+          }
+        }
+        Observer.publish('action', action)
       }
     }
 })(window)
