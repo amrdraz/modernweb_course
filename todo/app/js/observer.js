@@ -1,29 +1,33 @@
 
 
 (function(global){
-  let events = {}
+  let subscribers = {}
   let Observer = {
-    publish(event, object) {
-      events[event].forEach(function(subscriber){
-        subscriber(object)
-      })
-    },
+    // add a subscriber (a function)
+    // to the array of subscribers to the event
     subscribe(event, subscriber) {
-      if (events[event]===undefined) {
-        events[event] = []
+      if(!subscribers[event]) {
+        subscribers[event] = []
       }
-      events[event].push(subscriber)
+      subscribers[event].push(subscriber)
     },
-    unsubscribe(event, subscriber){
-      if(events[event].indexOf(subscriber)!==-1) {
-        events[event].splice((events[event].indexOf(subscriber)), 1)
+    // remove a subscriber (a function)
+    // from the array of subscribers of the event
+    unsubscribe(event, subscriber) {
+      if(subscribers[event].contains(subscriber)) {
+        subscribers[event].splice(index, 1)
       }
+    },
+    // loop over array of functions subscribed to this event
+    // and call them with arguments
+    publish(event, ...args) {
+        if(subscribers[event]) {
+           subscribers[event].forEach(subscriber=>subscriber(...args))
+        }
     }
-  }
-  Observer.trigger = Observer.dispatch = Observer.emit = Observer.publish;
-  Observer.on = Observer.subscribe;
-  Observer.off = Observer.unsubscribe;
+  Observer.trigger = Observer.dispatch = Observer.emit = Observer.publish
+  Observer.on = Observer.subscribe
+  Observer.off = Observer.unsubscribe
 
-  global.Observer = Observer;
-
+  global.Observer = Observer
 })(window)

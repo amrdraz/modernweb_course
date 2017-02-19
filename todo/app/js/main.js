@@ -5,6 +5,15 @@
   let renderStateToHTML = $injector.get('renderer')
   let store = $injector.get('store')
 
+  let itemReducer = (state={text:"",done:false}, action) => {
+    switch(action.type) {
+      case 'TOGGLE_TODO_ITEM'
+      return state.done = action.done;
+      break;
+    }
+    return state
+  }
+
   store.setReducer((state={}, action)=>{
       let actions = {
         'ADD_TODO_LIST': ({list})=> {
