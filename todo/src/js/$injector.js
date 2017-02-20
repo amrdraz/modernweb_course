@@ -30,7 +30,7 @@
 				throw new Error(`module ${moduleName} was not Injected`)
 			}
 		},
-		init(moduleName) {
+		init(moduleName, injectedDependencies) {
 			let module = this.providers[moduleName]
 			if (module.isInitialised) {
 				return this.modules[moduleName]
@@ -39,16 +39,23 @@
 				throw new Error(`Circular dependency when initialising ${moduleName} while initialising dependency ${module.currentDependency}`)
 			}
 			module.isInitialising = true
+
 			let deps = module.dependencies.map(
 				dependency => {
 					module.currentDependency = dependency
-					return this.init(dependency)
+					if (injectedDependencies && injectedDependencies[dependency]) {
+						return injectedDependencies[dependency]
+					} else {
+						return this.init(dependency)
+					}
 				}
 			)
 			delete module.currentDependency
 			module.isInitialising = false
 			module.isInitialised = true
-			this.modules[moduleName] = module.constructor(...deps)
+			if (!injectedDependencies) {
+				this.modules[moduleName] = module.constructor(...deps)
+			}
 			return this.modules[moduleName]
 		}
 	}
