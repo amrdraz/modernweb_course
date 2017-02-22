@@ -5,5 +5,5 @@
       ${vnode.children.map(render)}
     </${vnode.nodeName}>`
   }
-  global.renderHTML = render;
+  global.renderStateToHTML = render;
 })(window)
