@@ -32,7 +32,7 @@
 		},
 		init(moduleName, injectedDependencies) {
 			let module = this.providers[moduleName]
-			if (module.isInitialised) {
+			if (!injectedDependencies && module.isInitialised) {
 				return this.modules[moduleName]
 			}
 			if (module.isInitialising) {

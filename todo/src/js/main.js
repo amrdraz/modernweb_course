@@ -2,6 +2,10 @@
   let {document, $injector} = global
   $injector.initAll()
   let App = $injector.get('App')
+  let TestApp = $injector.init('App', {
+    TodoList: { render(){return "" }},
+    TodoListList: { render(){return "" }},
+  })
   let renderStateToHTML = $injector.get('renderer')
   let store = $injector.get('store')
 
