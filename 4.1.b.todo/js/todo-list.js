@@ -1,7 +1,7 @@
 
 
 (function (global) {
-  let {Observer} = global;
+  let {store} = global;
 
   global.TodoList = {
         state: {},
@@ -27,7 +27,7 @@
           this.state.inputValue = value
         },
         addItem(){
-          Observer.publish('action', {
+          store.dispatch({
             type: 'ADD_ITEM',
             item: {
               text: this.state.inputValue,
@@ -37,13 +37,13 @@
           this.state.inputValue=""
         },
         removeItem(index){
-          Observer.publish('action', {
+          store.dispatch({
             type: 'REMOVE_ITEM',
             index
           })
         },
         toggleDone(index, done){
-          Observer.publish('action', {
+          store.dispatch({
             type: 'TOGGLE_DONE_ITEM',
             index,
             done: !done

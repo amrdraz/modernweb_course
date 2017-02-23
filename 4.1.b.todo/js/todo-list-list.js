@@ -1,5 +1,5 @@
 (function functionName(global) {
-  let Observer = global.Observer;
+  let store = global.store;
   global.TodoListList = {
       render(todo_list_list) {
         return `
@@ -25,16 +25,16 @@
             items: []
           }
         }
-        Observer.publish('action', action)
+        store.dispatch(action)
       },
       selectList(index){
-        Observer.publish('action', {
+        store.dispatch({
           type: 'SELECT_LIST',
           index
         })
       },
       removeList(index){
-        Observer.publish('action', {
+        store.dispatch({
           type: 'REMOVE_LIST',
           index
         })

@@ -1,6 +1,6 @@
 
 
-let Observer = function(global){
+(function(global){
   let subscribers = {}
   let Observer = {
     // add a subscriber (a function)
@@ -25,9 +25,10 @@ let Observer = function(global){
            subscribers[event].forEach(subscriber=>subscriber(...args))
         }
     }
+  }
   Observer.trigger = Observer.dispatch = Observer.emit = Observer.publish
   Observer.on = Observer.subscribe
   Observer.off = Observer.unsubscribe
 
-  return Observer
-})
+  global.Observer = Observer
+})(window)

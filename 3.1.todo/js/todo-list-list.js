@@ -7,9 +7,9 @@
         <ul class="todo-list-list">
             ${todo_list_list.map((list, i)=>{
               return `<li class="todo-list-list__item primary-bg-color">
-                <div onclick="TodoListList.selectList(${i})" class="todo-list-list__todo-list row">
+                <div class="todo-list-list__todo-list row">
                   <span class="todo-list-list__title">${list.title}</span>
-                  <button onclick="TodoListList.removeList(${i})" class="todo-list-list__delete-btn">x</button>
+                  <button class="todo-list-list__delete-btn">x</button>
                 </div>
               </li>`
             }).join("")}
@@ -26,18 +26,6 @@
           }
         }
         Observer.publish('action', action)
-      },
-      selectList(index){
-        Observer.publish('action', {
-          type: 'SELECT_LIST',
-          index
-        })
-      },
-      removeList(index){
-        Observer.publish('action', {
-          type: 'REMOVE_LIST',
-          index
-        })
       }
     }
 })(window)
