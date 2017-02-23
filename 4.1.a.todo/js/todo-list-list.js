@@ -1,5 +1,5 @@
 (function functionName(global) {
-  let Observer = global.Observer;
+  let Observer = $injector.get('Observer')
   global.TodoListList = {
       render(todo_list_list) {
         return `

@@ -1,7 +1,7 @@
 
 
 (function (global) {
-  let {Observer} = global;
+  let Observer = $injector.get('Observer')
 
   global.TodoList = {
         state: {},

@@ -1,4 +1,7 @@
-(function main({App, document, Observer}) {
+(function main(global) {
+  let {App, document} = global
+  let Observer = $injector.get('Observer')
+
   let appContainer = document.querySelector('#appContainer')
   let state = {
     "todo_list_list": [
@@ -104,10 +107,10 @@
         items: [...todo_list.items, action.item]
       })
     },
-    REMOVE_ITEMtodo_list({ items: [] }, { index }){
+    REMOVE_ITEM(todo_list = { items: [] }, { index }){
       return Object.assign({}, todo_list, {
         // equivilant to: items.slice(0, index).concat(items.slice(index + 1))
-        items: [...todo_list.items.slice(0, index),...todo_list.items.slice(index + 1)]
+        items: [...todo_list.items.slice(0, index), ...todo_list.items.slice(index + 1)]
       })
     },
     TOGGLE_DONE_ITEM(item = {}, { done }){

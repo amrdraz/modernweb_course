@@ -1,6 +1,4 @@
-
-
-(function(global){
+$injector.inject('Observer', function(){
   let subscribers = {}
   let Observer = {
     // add a subscriber (a function)
@@ -30,5 +28,5 @@
   Observer.on = Observer.subscribe
   Observer.off = Observer.unsubscribe
 
-  global.Observer = Observer
-})(window)
+  return Observer
+})

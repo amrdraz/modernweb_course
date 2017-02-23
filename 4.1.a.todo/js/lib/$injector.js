@@ -1,9 +1,9 @@
 (function(global) {
-	const STRIP_COMMENTS = = /(\/\/.*$)|(\/\*[\s\S]*?\*\/)|(\s*=[^,\)]*(('(?:\\'|[^'\r\n])*')|("(?:\\"|[^"\r\n])*"))|(\s*=[^,\)]*))/mg;
+	const STRIP_COMMENTS = /(\/\/.*$)|(\/\*[\s\S]*?\*\/)|(\s*=[^,\)]*(('(?:\\'|[^'\r\n])*')|("(?:\\"|[^"\r\n])*"))|(\s*=[^,\)]*))/mg;
 	const ARGUMENT_NAMES = /([^\s,]+)/g;
 
 	/**
-	 * Annotate is used to exctract dependencies from the function\'s ARGUMENT NAMES
+	 * Annotate is used to extract dependencies from the function\'s ARGUMENT NAMES
 	 * instead of typing out the array
 	 * example: annotate(function(a, b, c){}) === ['a', 'b', 'c']
 	 * example: annotate(function(){}) === []
