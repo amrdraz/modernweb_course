@@ -1,10 +1,11 @@
-(function main(global) {
-  let {App, document, store, reducers } = global
+$injector.run(['App', 'store', 'reducers', 'document', function (App, store, reducers, document) {
 
   let appContainer = document.querySelector('#appContainer')
-  let render = function (container, state) {
+
+  let render = function(container, state) {
     container.innerHTML = App.render(state)
   }
+
   store.subscribe(state => render(appContainer, state))
 
   store.setReducer(reducers.app)
@@ -42,4 +43,4 @@
     }
   })
 
-})(window)
+}])

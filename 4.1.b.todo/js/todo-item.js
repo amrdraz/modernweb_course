@@ -1,6 +1,5 @@
-(function functionName(global) {
-  global.TodoItem = {
-      // localState: {},
+$injector.inject('TodoItem', function () {
+    return {
       render(item) {
         return `<div class="todo-item">
           <input onclick="TodoList.toggleDone(${item.index}, ${item.done})" class="todo-item__done" type="checkbox" ${item.done?'checked':''} >
@@ -9,4 +8,4 @@
         </div>`
       }
     }
-})(window)
+})

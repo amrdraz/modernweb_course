@@ -1,0 +1,5 @@
+$injector.inject('window', ()=>window)
+$injector.inject('global', ()=>window)
+$injector.inject('prompt', ()=>prompt)
+$injector.inject('document', ()=>document)
+$injector.inject('store', ()=>store)

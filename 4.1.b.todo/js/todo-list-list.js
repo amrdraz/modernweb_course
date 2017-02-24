@@ -1,6 +1,5 @@
-(function functionName(global) {
-  let store = global.store;
-  global.TodoListList = {
+$injector.inject('TodoListList', function (store, prompt) {
+  return {
       render(todo_list_list) {
         return `
         <button onclick="TodoListList.createList()" type="button" class="create-list secondary-bg-color ">Create New List</button>
@@ -40,4 +39,4 @@
         })
       }
     }
-})(window)
+})
