@@ -1,43 +1,19 @@
 (function main(global) {
   let {App, document} = global
   let Observer = $injector.get('Observer')
-
   let appContainer = document.querySelector('#appContainer')
-  let state = {
-    "todo_list_list": [
-      {
-        "title": "First List",
-        "items": [
-          {
-            "text": "Somthing Js",
-            "done": false
-          },{
-            "text": "Something else",
-            "done": true
-          }
-        ]
-      },
-      {
-        "title": "Second List",
-        "items": [
-          {
-            "text": "item 1",
-            "done": false
-          },{
-            "text": "item 2",
-            "done": false
-          }
-        ]
-      }
-    ],
-    "selected_list": 0
-  }
-
-  renderStateToHTML(appContainer, state)
 
   function renderStateToHTML(container, state) {
     container.innerHTML = App.render(state)
   }
+
+
+  // state management logic
+  let state;
+
+  Observer.on('state.update', function(new_state){
+    renderStateToHTML(appContainer, new_state);
+  })
 
   Observer.subscribe('action', function HandleActions(action){
     let items, item;
@@ -76,11 +52,8 @@
       break;
       default: new_state = old_state
     }
+    state = new_state
     Observer.publish('state.update', new_state)
-  })
-
-  Observer.on('state.update', function(state){
-    renderStateToHTML(appContainer, state);
   })
 
 
@@ -118,5 +91,38 @@
       return Object.assign({}, item, { done })
     }
   }
+
+  Observer.publish('action', {
+    type: 'LOAD_STATE',
+    state: {
+      "todo_list_list": [
+        {
+          "title": "First List",
+          "items": [
+            {
+              "text": "Somthing Js",
+              "done": false
+            },{
+              "text": "Something else",
+              "done": true
+            }
+          ]
+        },
+        {
+          "title": "Second List",
+          "items": [
+            {
+              "text": "item 1",
+              "done": false
+            },{
+              "text": "item 2",
+              "done": false
+            }
+          ]
+        }
+      ],
+      "selected_list": 0
+    }
+  })
 
 })(window)
