@@ -8,7 +8,7 @@ $injector.inject('reducers', function () {
   const REMOVE_ITEM = 'REMOVE_ITEM'
   const TOGGLE_DONE_ITEM = 'TOGGLE_DONE_ITEM'
 
-  return {
+  let reducers = {
     app(state = { todo_list_list:[], selected_list:-1 }, action){
       switch(action.type) {
         case LOAD_STATE:
@@ -121,4 +121,6 @@ $injector.inject('reducers', function () {
       return Object.assign({}, item, { done })
     }
   }
+
+  return reducers
 })

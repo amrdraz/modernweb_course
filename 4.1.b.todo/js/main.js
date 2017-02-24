@@ -1,4 +1,4 @@
-$injector.run(['App', 'store', 'reducers', 'document', function (App, store, reducers, document) {
+$injector.run(function (App, store, reducers, document, global) {
 
   let appContainer = document.querySelector('#appContainer')
 
@@ -43,4 +43,6 @@ $injector.run(['App', 'store', 'reducers', 'document', function (App, store, red
     }
   })
 
-}])
+  global.TodoList = $injector.get('TodoList')
+  global.TodoListList = $injector.get('TodoListList')
+})
