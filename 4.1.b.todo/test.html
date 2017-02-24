@@ -7,32 +7,35 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/navigation/navigation.css">
-    <link rel="stylesheet" href="css/navigation/create-list.css">
-    <link rel="stylesheet" href="css/navigation/todo-list-list.css">
-    <link rel="stylesheet" href="css/todo-list/create-todo.css">
-    <link rel="stylesheet" href="css/todo-list/todo-list.css">
-    <link rel="stylesheet" href="css/todo-list/todo-item.css">
+    <style>
+      .test {
+        min-height: 60px;
+        padding: 20px;
+      }
+      .test--passed {
+        background-color: #7ee47e;
+      }
+      .test--failed {
+        background-color: #ec7f7f;
+      }
+    </style>
     <!-- endbuild -->
   </head>
   <body>
-    <div id="appContainer" class="col">
-      <header class="header row primary-bg-color">
-        <h1 class="header__title">Check Console For Tests</h1>
-      </header>
-      <div class="row passed-test">
-
-      </div>
-      <div class="row failed-test">
-
-      </div>
-    </div>
+    <div id="testContainer" class="col"></div>
 
     <!-- build:js main.js -->
     <script type="text/javascript" src="js/lib/$injector.js"></script>
     <script type="text/javascript" src="js/todo-item.js"></script>
-    <script type="text/javascript" src="js/test.js"></script>
+    <script type="text/javascript" src="js/todo-list.js"></script>
+    <script type="text/javascript" src="js/todo-list-list.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
     <!-- endbuild -->
 
+    <!-- build:js main.js -->
+    <script type="text/javascript" src="js/lib/test-runner.js"></script>
+    <script type="text/javascript" src="js/todo-item--test.js"></script>
+    <script type="text/javascript" src="js/test.js"></script>
+    <!-- endbuild -->
   </body>
 </html>
