@@ -12,6 +12,14 @@
       vtext.isGenerated = true
       return vtext
     }
+    if (typeof node.type === 'function') {
+      node.props.children = node.children
+      return createElement(node.type(node.props))
+    }
+    if (typeof node.type === 'object') {
+      node.props.children = node.children
+      return createElement(node.type.render(node.props))
+    }
     // if(Array.isArray(node)) {
     //   return node.map(createElement)
     // }
