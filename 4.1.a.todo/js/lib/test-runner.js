@@ -24,7 +24,7 @@
         actual,
         expect,
         message: `HTML did not match`,
-        passed: expect.replace(/[\s]+/g," ")===actual.replace(/[\s]+/g," "),
+        passed: expect.replace(/[\s]+/gm," ")===actual.replace(/[\s]+/gm," "),
       })
 
       let runTests = () => {
@@ -34,19 +34,25 @@
             result = tests[testKey]()
           } catch (error) {
             result = assert.fail({
-              message: `An error occured while running ${test}`,
+              message: `An error occured while running ${testKey}`,
               error: error
             })
           }
-          result.title = testKey
-          return result
+          if(result) {
+            result.title = testKey
+            return result
+          } else {
+            assert.fail({
+              message: `You forgot to return an assertion for ${testKey}`,
+            })
+          }
         })
       }
 
       let getReport = () => {
         let testResults = runTests()
         let passed = testResults.every(test=>test.passed)
-        let passedCount = testResults.reduce((sum, test)=>test.passed?1:0, 0)
+        let passedCount = testResults.reduce((sum, test)=>test.passed?++sum:sum, 0)
         let failedCount = testResults.length - passedCount
         return {
           testResults,
@@ -84,10 +90,10 @@
               `}
             </div>
           `}
-        `)}
+        `).join('')}
       `
 
-      let escapeHTMLString = (html) => html.replace(/(?:<(\w+)\s)|(?:<\/(\w+>))/gm, (m,p)=>`<<i></i>${p} `)
+      let escapeHTMLString = (html) => html?html.replace(/(?:<(\w+)\s)|(?:<\/(\w+>))/gm, (m, p, p2)=>p?`<<i></i>${p} `:p2?`<<i></i>/${p2}`:''):html
 
       global.TestRunner = {
         addTest,

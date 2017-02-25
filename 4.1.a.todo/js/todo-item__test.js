@@ -2,7 +2,7 @@
 (function tests(global){
       let {addTest, assert} = global.TestRunner
 
-      addTest('TodoItemTestResult', function TodoItemTestResult() {
+      addTest('TodoItemTest', function TodoItemTestResult() {
         let props = {
           text: "Hello",
           done: true,

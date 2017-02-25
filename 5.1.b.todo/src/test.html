@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>ToDo</title>
-    <!-- build:css main.css -->
+    <!-- build:css test.css -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/header.css">
@@ -24,15 +24,18 @@
   <body>
     <div id="testContainer" class="col"></div>
 
-    <!-- build:js main.js -->
+    <!-- build:js test.js -->
+    <script type="text/javascript" src="js/lib/vdom.js"></script>
     <script type="text/javascript" src="js/lib/$injector.js"></script>
+    <script type="text/javascript" src="js/lib/store.js"></script>
+    <script type="text/javascript" src="js/lib/renderer.js"></script>
+    <script type="text/javascript" src="js/constants.js"></script>
     <script type="text/javascript" src="js/todo-item.js"></script>
     <script type="text/javascript" src="js/todo-list.js"></script>
     <script type="text/javascript" src="js/todo-list-list.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
-    <!-- endbuild -->
+    <script type="text/javascript" src="js/reducers.js"></script>
 
-    <!-- build:js main.js -->
     <script type="text/javascript" src="js/lib/test-runner.js"></script>
     <script type="text/javascript" src="js/todo-item__test.js"></script>
     <script type="text/javascript" src="js/test.js"></script>

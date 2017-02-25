@@ -2,6 +2,7 @@
 
 
   function hyperscript(type, props, ...children) {
+    children = children.length ? [].concat(...children) : [];
     return { type, props: props || {}, children };
   }
 
