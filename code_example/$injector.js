@@ -1,18 +1,56 @@
 (function(global) {
-	global.$injector = {
+	const STRIP_COMMENTS = /(\/\/.*$)|(\/\*[\s\S]*?\*\/)|(\s*=[^,\)]*(('(?:\\'|[^'\r\n])*')|("(?:\\"|[^"\r\n])*"))|(\s*=[^,\)]*))/mg;
+	const ARGUMENT_NAMES = /([^\s,]+)/g;
+
+	/**
+	 * Annotate is used to exctract dependencies from the function\'s ARGUMENT NAMES
+	 * instead of typing out the array
+	 * example: annotate(function(a, b, c){}) === ['a', 'b', 'c']
+	 * example: annotate(function(){}) === []
+	 */
+	function annotate(func) {
+	  var fnStr = func.toString().replace(STRIP_COMMENTS, '');
+	  var result = fnStr.slice(fnStr.indexOf('(')+1, fnStr.indexOf(')')).match(ARGUMENT_NAMES);
+	  if(result === null)
+	     result = [];
+	  return result;
+	}
+
+	/**
+	 * Take a function or array and exctract the dependencies and constructor
+	 * instead of typing out the array
+	 * example: extractDependencies(function(a, b, c){}) === {dependencies: ['a', 'b', 'c'], constructor: function(a, b, c){} }
+	 * example: extractDependencies(['a', 'b', 'c', function(a, b, c){}]) === {dependencies: ['a', 'b', 'c'], constructor: function(a, b, c){} }
+	 * example: extractDependencies(function(){}) === {dependencies: [], constructor: function(){} }
+	 * example: extractDependencies([function(){}]) === {dependencies: [], constructor: function(){} }
+	 */
+	function extractDependencies(constructor) {
+		let dependencies = [];
+		if (typeof constructor == 'function') {
+			// it is possible to declare dependencies into a function
+			// by attaching a $inject array after its decleration
+			if (!(dependencies = constructor.$inject)) {
+					dependencies = annotate(constructor)
+			}
+		} else if(Array.isArray(constructor)) {
+			dependencies = constructor;
+			constructor = dependencies.pop()
+		}
+		return {dependencies, constructor}
+	}
+
+	let $injector = {
 		modules: {},
 		providers: {},
-		initAll() {
-			Object.values(this.providers).forEach(
-				provider=>this.init(provider.name)
-			)
+		initAll(moduleNames) {
+			if (!moduleNames) {
+				moduleNames = Object.keys(this.providers)
+			}
+			return moduleNames.map( name => this.init(name) )
 		},
-		inject(moduleName,  constructor) {
-      let dependencies = [];
-      if(Array.isArray(constructor)) {
-        dependencies = constructor;
-        constructor = dependencies.pop()
-      }
+		inject(moduleName,  module) {
+      let {dependencies, constructor} = extractDependencies(module)
+
       this.providers[moduleName] = {
 				name: moduleName,
 				dependencies,
@@ -30,9 +68,12 @@
 				throw new Error(`module ${moduleName} was not Injected`)
 			}
 		},
-		init(moduleName) {
+		init(moduleName, injectedDependencies) {
 			let module = this.providers[moduleName]
-			if (module.isInitialised) {
+			if (!module) {
+				throw new Error(`module ${moduleName} was not Injected`)
+			}
+			if (module.isInitialised && !injectedDependencies) {
 				return this.modules[moduleName]
 			}
 			if (module.isInitialising) {
@@ -42,7 +83,7 @@
 			let deps = module.dependencies.map(
 				dependency => {
 					module.currentDependency = dependency
-					return this.init(dependency)
+					return injectedDependencies?injectedDependencies[dependency]:this.init(dependency)
 				}
 			)
 			delete module.currentDependency
@@ -50,6 +91,13 @@
 			module.isInitialised = true
 			this.modules[moduleName] = module.constructor(...deps)
 			return this.modules[moduleName]
+		},
+		run(module) {
+			let {dependencies, constructor} = extractDependencies(module)
+			constructor(...this.initAll(dependencies))
 		}
 	}
+	$injector.define = $injector.inject
+
+	global.$injector = $injector
 })(window)

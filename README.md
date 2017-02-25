@@ -49,60 +49,74 @@ In this course we will introduce
 
 * Build a simple webapp without any libraries
 * The basic problems we face
-* Modularise your application
+* Split code into sepret files
 * OOCSS and BEM
-* Build process with task runner
 
-### 2. Pillars of JavaScript: Everything can be Javascript
+### 2. Life of a Modern Application: Data renders View
 
 > In this session we will start with an recap on the basic Javascript Features and go through Functional Programming Concepts.  
 
-		* Clean ES6 code
-		* Functional programming Principles
-			* Pure Function
-			* Immutable Types
-			* Composition
-			* Map Reduce Filter
-		* Event Delegation Pattern
-		* The start of Dependency Injection
+* Flexbox
+* es6 feature template strings
+* components rendering data to html
 
 **Assignment for next time**
 
-* Templates
-* Build with webpack
-* JSX
-* Building a virtual DOM
+* Complete rendering code to HTML
 
-### 3. Pillars of JavaScript: Data is the source of truth
+### 3. Life of a Modern Application: Actions update Data
 
-* The Event Loop
+* DOM Events
+* Scoping our code
 * Event based Programming with the Observer Pattern
-* Object Proxies (or Define property)
-* Async data
 
 **Assignment for next time**
 
 * Flux architecture (data down action up)
-* Testing our state
-* Testing our interface
 
-### Pillars of Javascript: Asynchronous code
-	* Sockets
-	* Asynchronous
-	* Reactive Programming
+### 4. Life of a Modern Application: Testing
+
+* Unit Testing HTML render
+* Pure Functions
+* State Store
+* Mocks and Stubs
+* Dependency Injection
+
+**Assignment for next time**
+
+* Testing our render functions
+* Testing our action dispachers
+* Testing our actions mutating the store
+
+### 5. Life of a Modern Application: Views trigger Events
+
+* NodeJS: modules
+* build tools: gulp
+* rendering a virtual dom
+* running our test task
+* browserify
+
+**Assignment for next time**
+
+* Develop a new kind of todo item called a counter
+* todo items can now be edited
+
+### 6. Life of a Modern Application: Asynchronous code
+
+* The Javascript Event Loop
+* Promises with fetch
+* Creating a simple REST server with express
+* Sockets
+* Asynchronous
+* Reactive Programming
 
 
-### 4. Writing Testable Code
+----
+						_MIDTERM BREAK_
+----
 
-1. What testing methods exist
-		* Different Tests
-		* Video
-					* Boundaries: By Gerry Bernheart
-2. Write Testable maintainable code
-		* Actor model
-		* State management with Redux
 
-### 5. Continuous Integration and Deployment     
+### 7. Continuous Integration and Deployment     
 1. Front end with Git pages
 		* Resisting Git
 		* Deploying your code on github with a CI
@@ -110,26 +124,14 @@ In this course we will introduce
 2. Backend with Capistrano (node flight)
 		* Deploying on a server with ssh
 		* Automating with the CI our git pull request acceptance
-		* Using Capistrano for deployment
+		* Using flightplan for deployment
 
-### 6. All you need for an MVP
+### 8. All you need for an MVP
 
 1. Firebase
 	*
 	*
 2. Testing with Firebase
-	*
-	*
-- - - -
-						_MIDTERM BREAK_
-- - - -
-
-### 7. Architecture for massive apps: Design
-
-1. Revisit our developer tools
-	*
-	*
-2. Component architecture
 	*
 	*
 
