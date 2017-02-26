@@ -2,7 +2,14 @@
 
 
   function hyperscript(type, props, ...children) {
-    return { type, props: props || {}, children };
+    props = props || {} // make sure I have a props object
+    children = children.length ? [].concat(...children) : []; // make sure we flatten arrays in children
+    // handle custom components
+    if (typeof type === 'function' || typeof type === 'object') {
+      props.children = children // add children if any were passed to props
+      return type['render']?type.render(props):type(props)
+    }
+    return { type, props, children };
   }
 
   function createElement(node) {
@@ -11,20 +18,13 @@
       vtext.isGenerated = true
       return vtext
     }
-    // if(Array.isArray(node)) {
-    //   return node.map(createElement)
-    // }
     const $el = document.createElement(node.type);
     setProps($el, node.props);
     addEventListeners($el, node.props);
     node.children
       .map(createElement)
       .forEach((element)=>{
-        // if(Array.isArray(element)) {
-        //   element.forEach(el=>$el.appendChild(el))
-        // } else {
           $el.appendChild(element)
-        }
       });
     return $el;
   }
@@ -62,7 +62,11 @@
       if (isEventProp(name)) {
         $target.addEventListener(
           extractEventName(name),
-          props[name]
+          (...args)=> {
+            let event = args[0]
+            event.stopPropagation()
+            props[name](...args)
+          }
         );
       }
     });
@@ -97,9 +101,6 @@
         $parent.childNodes[index]
       );
     } else if (newNode.type) {
-      if($parent.nodeType===3 && !$parent.isGenerated) {
-        return;
-      }
       updateProps(
         $parent.childNodes[index],
         newNode.props,
@@ -108,8 +109,14 @@
       const newLength = newNode.children.length;
       const oldLength = oldNode.children.length;
       for (let i = 0; i < newLength || i < oldLength; i++) {
+        let child = $parent.childNodes[index]
+        if(child.nodeType===3 && !child.isGenerated) {
+          i-=1;
+          index+=1;
+          continue;
+        }
         updateElement(
-          $parent.childNodes[index],
+          child,
           newNode.children[i],
           oldNode.children[i],
           i

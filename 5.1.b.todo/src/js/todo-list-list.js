@@ -1,6 +1,6 @@
 $injector.inject('TodoListList', function (store, prompt) {
   return {
-      render(todo_list_list) {
+      render({todo_list_list, selected_list}) {
         return (<sidebar class="navigation col f-1">
           <button onclick={()=>this.createList()} type="button" class="create-list secondary-bg-color ">Create New List</button>
           <ul class="todo-list-list">

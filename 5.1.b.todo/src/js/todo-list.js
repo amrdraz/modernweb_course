@@ -4,7 +4,7 @@ $injector.inject('TodoList', function (store, TodoItem) {
 
   return {
       state: {},
-      render(list) {
+      render({list}) {
         return (<main class="col f-3">
           <div class="row create-todo">
             <input onchange={(e)=>TodoList.setInputValue(e.target.value)} type="text" class="create-todo__input" placeholder="Enter New To Do"/>

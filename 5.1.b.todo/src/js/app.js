@@ -1,18 +1,21 @@
 
 
 $injector.inject('App', function (TodoListList, TodoList) {
+
+  let Header = (props) => (<header class="header row primary-bg-color">
+      <h1 class="header__title">{props.children}</h1>
+    </header>)
+
   return {
     render(state) {
       return (
         <app>
-          <header class="header row primary-bg-color">
-            <h1 class="header__title">To Do App</h1>
-          </header>
+          <Header>To Do App</Header>
           <div class="row">
-              {TodoListList.render(state.todo_list_list)}
-              {state.todo_list_list[state.selected_list]?
-                TodoList.render(state.todo_list_list[state.selected_list])
-              :null}
+              <TodoListList todo_list_list={state.todo_list_list} selected_list={state.selected_list} ></TodoListList>
+              {state.todo_list_list[state.selected_list] &&
+                <TodoList list={state.todo_list_list[state.selected_list]}></TodoList>
+              }
           </div>
         </app>
       )
