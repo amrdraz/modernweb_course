@@ -4,7 +4,7 @@ $injector.inject('TodoList', function (store, TodoItem) {
 
   return {
       state: {},
-      render(list) {
+      render({list}) {
         return (<main class="col f-3">
           <div class="row create-todo">
             <input onchange={(e)=>TodoList.setInputValue(e.target.value)} type="text" class="create-todo__input" placeholder="Enter New To Do"/>
@@ -13,12 +13,12 @@ $injector.inject('TodoList', function (store, TodoItem) {
           <ul class="todo-list col">
             {list.items.map((item, i)=>(
               <li class="todo-list__item">
-                {TodoItem.render({
-                  text: item.text,
-                  done: item.done,
-                  toggleDone: () => this.toggleDone(i, item.done),
-                  removeItem: () => this.removeItem(i)
-                })}
+                <TodoItem
+                  text={item.text}
+                  done={item.done}
+                  toggleDone={() => this.toggleDone(i, item.done)}
+                  removeItem={() => this.removeItem(i)}
+                  ></TodoItem>
               </li>
               ))}
           </ul>

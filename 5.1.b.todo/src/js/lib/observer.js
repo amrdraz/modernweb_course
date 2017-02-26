@@ -24,6 +24,13 @@
         if(subscribers[event]) {
            subscribers[event].forEach(subscriber=>subscriber(...args))
         }
+    },
+    once(event, subscriber) {
+      let sub = function (...args){
+        subscriber(...args)
+        Observer.unsubscribe(event, sub)
+      }
+      Observer.subscribe(event, sub)
     }
   }
   Observer.trigger = Observer.dispatch = Observer.emit = Observer.publish

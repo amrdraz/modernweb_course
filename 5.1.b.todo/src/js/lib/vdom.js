@@ -2,8 +2,14 @@
 
 
   function hyperscript(type, props, ...children) {
-    children = children.length ? [].concat(...children) : [];
-    return { type, props: props || {}, children };
+    props = props || {} // make sure I have a props object
+    children = children.length ? [].concat(...children) : []; // make sure we flatten arrays in children
+    // handle custom components
+    if (typeof type === 'function' || typeof type === 'object') {
+      props.children = children // add children if any were passed to props
+      return type['render']?type.render(props):type(props)
+    }
+    return { type, props, children };
   }
 
   function createElement(node) {
@@ -12,18 +18,12 @@
       vtext.isGenerated = true
       return vtext
     }
-    // if(Array.isArray(node)) {
-    //   return node.map(createElement)
-    // }
     const $el = document.createElement(node.type);
     setProps($el, node.props);
     addEventListeners($el, node.props);
     node.children
       .map(createElement)
       .forEach((element)=>{
-        // if(Array.isArray(element)) {
-        //   element.forEach(el=>$el.appendChild(el))
-        // } else {
           $el.appendChild(element)
       });
     return $el;
