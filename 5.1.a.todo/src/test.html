@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ToDo</title>
+    <!-- build:css main.css -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/header.css">
+    <style>
+      .test {
+        min-height: 60px;
+        padding: 20px;
+      }
+      .test--passed {
+        background-color: #7ee47e;
+      }
+      .test--failed {
+        background-color: #ec7f7f;
+      }
+    </style>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <div id="testContainer" class="col"></div>
+
+    <!-- build:js main.js -->
+    <script type="text/javascript" src="js/lib/observer.js"></script>
+    <script type="text/javascript" src="js/todo-item.js"></script>
+    <script type="text/javascript" src="js/todo-list.js"></script>
+    <script type="text/javascript" src="js/todo-list-list.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js test.js -->
+    <script type="text/javascript" src="js/lib/test-runner.js"></script>
+    <script type="text/javascript" src="js/todo-item__test.js"></script>
+    <script type="text/javascript" src="js/test.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
