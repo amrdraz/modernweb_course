@@ -5,7 +5,7 @@ exports.addItem = function (array, item) {
 
 exports.removeItem = function (array, item) {
   let index = array.indexOf(item)
-  return array.splice(0, index).concat(array.splice(index))
+  return array.slice(0, index).concat(array.slice(index+1))
 }
 
 exports.removeItemAtIndex = function (array, index) {
@@ -13,11 +13,11 @@ exports.removeItemAtIndex = function (array, index) {
 }
 
 exports.setItemAtIndex = function (array, item, index) {
-  return [...array.splice(0, index), item, ...array.splice(index)]
+  return [...array.slice(0, index), item, ...array.slice(index+1)]
 }
 
 exports.addItemAtIndex = function (array, item, index) {
-  return [...array.splice(0, index), item, ...array.splice(index-1)]
+  return [...array.slice(0, index), item, ...array.slice(index)]
 }
 
 
