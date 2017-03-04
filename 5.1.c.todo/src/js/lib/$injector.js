@@ -52,10 +52,11 @@
 			delete module.currentDependency
 			module.isInitialising = false
 			module.isInitialised = true
+			module = module.constructor(...deps)
 			if(!injectedDependencies) {
-				this.modules[moduleName] = module.constructor(...deps)
+				this.modules[moduleName] = module
 			}
-			return this.modules[moduleName]
+			return module
 		},
 		run(module) {
 			let {dependencies, constructor} = extractDependencies(module)

@@ -1,6 +1,5 @@
-(function functionName(global) {
-  global.TodoItem = {
-      // localState: {},
+$injector.define('TodoItem', function () {
+  return {
       render(item) {
         return {
           type: 'div', props: { class:"todo-item" },
@@ -18,4 +17,4 @@
         }
       }
     }
-})(window)
+})

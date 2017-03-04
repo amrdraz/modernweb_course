@@ -1,6 +1,5 @@
-(function functionName(global) {
-  let Observer = $injector.get('Observer')
-  global.TodoListList = {
+$injector.define('TodoListList', function (Observer, prompt) {
+  return {
       render(todo_list_list) {
         return {
           type: 'sidebar', props: { class: 'navigation col f-1' },
@@ -59,4 +58,4 @@
         })
       }
     }
-})(window)
+})

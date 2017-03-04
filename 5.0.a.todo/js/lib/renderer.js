@@ -8,6 +8,8 @@
     old_vdom = new_vdeom
   }
 
-  global.renderHTML = renderHTML
+  global.renderer = {
+    renderHTML
+  }
 
 })(window)

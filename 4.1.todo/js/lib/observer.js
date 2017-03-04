@@ -1,4 +1,4 @@
-(function(global){
+(function (global) {
   let subscribers = {}
   let Observer = {
     // add a subscriber (a function)

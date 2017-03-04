@@ -1,9 +1,7 @@
 
 
-(function (global) {
-  let Observer = $injector.get('Observer')
-
-  global.TodoList = {
+$injector.define('TodoList', function (Observer, TodoItem) {
+  return {
         state: {},
         render(state) {
           let list = state.todo_list_list[state.selected_list]
@@ -67,4 +65,4 @@
           })
         }
     }
-})(window)
+})

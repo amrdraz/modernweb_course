@@ -1,8 +1,7 @@
 
 
-(function functionName(global) {
-  let {TodoListList, TodoList} = global
-  global.App = {
+$injector.inject('App', function (TodoListList, TodoList) {
+  return {
       render(state) {
         return `
         <header class="header row primary-bg-color">
@@ -21,4 +20,4 @@
         `
       }
     }
-})(window)
+})

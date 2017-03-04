@@ -29,7 +29,7 @@
     return $el;
   }
 
-  function setProps($target, props) {
+  function setProps($target, props = {}) {
     Object.keys(props).forEach(name => {
       setProp($target, name, props[name]);
     });
@@ -57,7 +57,7 @@
   }
 
 
-  function addEventListeners($target, props) {
+  function addEventListeners($target, props = {}) {
     Object.keys(props).forEach(name => {
       if (isEventProp(name)) {
         $target.addEventListener(
@@ -140,7 +140,7 @@
     }
   }
 
-  function updateProps($target, newProps, oldProps = {}) {
+  function updateProps($target, newProps = {}, oldProps = {}) {
     const props = Object.assign({}, newProps, oldProps);
     Object.keys(props).forEach(name => {
       updateProp($target, name, newProps[name], oldProps[name]);
