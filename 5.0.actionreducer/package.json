@@ -4,14 +4,14 @@
   "description": "sample todo",
   "main": "js/main.js",
   "scripts": {
-    "start": "gulp serve",
-    "build": "gulp build",
     "test": "jest"
   },
   "jest": {
     "verbose": true,
     "collectCoverage": true,
-    "collectCoverageFrom": ["src/*.js"]
+    "collectCoverageFrom": [
+      "src/*.js"
+    ]
   },
   "author": "Amr Draz <amr.m.draz@gmail.com>",
   "license": "ISC",
@@ -21,5 +21,8 @@
     "babel-preset-react": "^6.23.0",
     "jest": "^19.0.2",
     "regenerator-runtime": "^0.10.3"
+  },
+  "dependencies": {
+    "leftpad": "0.0.0"
   }
 }
