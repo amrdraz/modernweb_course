@@ -1,0 +1,12 @@
+
+.todo-list__item {
+  display: flex;
+  height: 50px;
+  align-items: stretch;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+  background-color: #f3ddd6;
+}
+.todo-list__item:hover {
+  background-color: #fbe4dd;
+}
