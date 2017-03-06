@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render TodoItemJSX to Stirng 1`] = `
+"<div class=\\"todo-item\\" >
+  <input onclick=\\"undefined\\" class=\\"todo-item__done\\" type=\\"checkbox\\" checked=\\"true\\" >
+  
+</node.type>,<span class=\\"todo-item__text\\" >
+  Hello
+</node.type>,<button onclick=\\"undefined\\" class=\\"todo-item__delete-btn\\" >
+  x
+</node.type>
+</node.type>"
+`;
+
+exports[`render TodoItemJSX to vdom 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [],
+      "props": Object {
+        "checked": true,
+        "class": "todo-item__done",
+        "onclick": undefined,
+        "type": "checkbox",
+      },
+      "type": "input",
+    },
+    Object {
+      "children": Array [
+        "Hello",
+      ],
+      "props": Object {
+        "class": "todo-item__text",
+      },
+      "type": "span",
+    },
+    Object {
+      "children": Array [
+        "x",
+      ],
+      "props": Object {
+        "class": "todo-item__delete-btn",
+        "onclick": undefined,
+      },
+      "type": "button",
+    },
+  ],
+  "props": Object {
+    "class": "todo-item",
+  },
+  "type": "div",
+}
+`;
+
+exports[`render TodoItemString 1`] = `
+"<div class=\\"todo-item\\">
+        <input onclick=undefined class=\\"todo-item__done\\" type=\\"checkbox\\" checked />
+        <span class=\\"todo-item__text\\">Hello</span>
+        <button onclick=undefined class=\\"todo-item__delete-btn\\">x</button>
+      </div>"
+`;
