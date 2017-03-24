@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render TodoList with empty array 1`] = `
+"<undefined list=\\"[object Object]\\" >
+  
+</node.type>"
+`;
+
+exports[`render TodoList with empty item 1`] = `
+"<undefined list=\\"[object Object]\\" >
+  
+</node.type>"
+`;
