@@ -1,61 +1,40 @@
 
+import {LOAD_STATE} from './actionTypes'
+
 import {
-  LOAD_STATE,
-  SELECT_LIST,
   ADD_LIST,
   REMOVE_LIST,
+  SELECT_LIST,
+} from './components/TodoListListContainer/actionTypes'
+
+import {
   ADD_ITEM,
   REMOVE_ITEM,
   TOGGLE_DONE_ITEM,
-} from '~/App/actionTypes.js'
-
-import todo_lists_list from './components/TodoListList/reducers'
+} from './components/TodoListContainer/actionTypes'
 
 
-const App = combineReducers({
-  todo_lists,
-  selected_list
-})
+import TodoListList from './components/TodoListListContainer/reducers'
+import TodoList from './components/TodoListContainer/reducers'
 
-function selected_list(state = -1, action){
-  switch(action.type) {
+export default (state = { todo_list_list:[], selected_list: -1}, action) => {
+  switch (action.type) {
     case LOAD_STATE:
-      return action.state.selected_list
-    case SELECT_LIST:
-      return action.index
-    break;
-    case ADD_LIST:
-      return state===-1?0:state
-    break;
-    case REMOVE_LIST:
-      return action.index>state?state:state-1
-    default:
-      return state
+      return action.state;
+    case ADD_LIST: case REMOVE_LIST: case SELECT_LIST:
+      return TodoListList(state, action)
+    case ADD_ITEM: case REMOVE_ITEM: case TOGGLE_DONE_ITEM:
+      let selectList = state.todo_list_list[state.selected_list]
+      return selectList?({
+        ...state,
+        todo_list_list: state.todo_list_list.map((list, i) => (
+          i===state.selected_list?TodoList(list, action):list
+        ))
+      }):state
+    default: return state
   }
 }
 
-function todo_list_list(state = [], action) {
-    switch(action.type) {
-      case LOAD_STATE:
-        return action.state.todo_list_list
-      break;
-      case ADD_LIST: case REMOVE_LIST:
-        return todo_lists_list(state, action)
-      break;
-      case ADD_ITEM: case REMOVE_ITEM: case TOGGLE_DONE_ITEM:
-        return Object.assign({}, state, {
-          todo_list_list: state.todo_list_list.map((todo_list, index)=>{
-            if (index===state.selected_list) {
-              return reducers.todo_list(todo_list, action)
-            }
-            return todo_list
-          })
-        })
-      break;
-      default:
-        return state
-    }
-  }
+export const todoList = ({todo_list_list, selected_list}, action) => {
+  return
 }
-
-export default App;

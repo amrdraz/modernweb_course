@@ -1,0 +1,30 @@
+{
+  "name": "todo",
+  "version": "0.0.0",
+  "description": "sample todo",
+  "main": "js/main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/*.js"
+    ]
+  },
+  "author": "Amr Draz <amr.m.draz@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-jest": "^19.0.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "jest": "^19.0.2",
+    "regenerator-runtime": "^0.10.3"
+  },
+  "dependencies": {
+    "axios": "^0.15.3",
+    "leftpad": "0.0.0",
+    "supertest": "^3.0.0"
+  }
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 602 544" enable-background="new 0 0 602 544" xml:space="preserve">
+<g>
+	<line fill="#FFFFFF" x1="277" y1="54" x2="277" y2="474"/>
+	<g>
+		<line fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="277" y1="60" x2="277" y2="468"/>
+		<g>
+			<circle cx="277" cy="60" r="6"/>
+		</g>
+		<g>
+			<circle cx="277" cy="468" r="6"/>
+		</g>
+	</g>
+</g>
+<g>
+	<line fill="#FFFFFF" x1="67" y1="264" x2="487" y2="264"/>
+	<g>
+		<line fill="none" stroke="#000000" stroke-width="4" stroke-linejoin="round" x1="73" y1="264" x2="481" y2="264"/>
+		<g>
+			<circle cx="73" cy="264" r="6"/>
+		</g>
+		<g>
+			<circle cx="481" cy="264" r="6"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 9.0264 251.1782)" font-family="'OpenSans-Bold'" font-size="38.0494">Time</text>
+<text transform="matrix(1 0 0 1 183.0264 522.1782)" font-family="'OpenSans-Bold'" font-size="38.0494">Availability</text>
+<text transform="matrix(1 0 0 1 106.3434 109.0001)"><tspan x="0" y="0" font-family="'OpenSans-Bold'" font-size="25.0049">operations</tspan><tspan x="-10.9" y="30" font-family="'OpenSans-Bold'" font-size="25.0049">assignments</tspan><tspan x="-16.3" y="60" font-family="'OpenSans-Bold'" font-size="25.0049">function calls</tspan></text>
+<text transform="matrix(1 0 0 1 129.4547 308.0001)"><tspan x="0" y="0" font-family="'OpenSans-Bold'" font-size="25.0049">Buffers</tspan><tspan x="-16.8" y="30" font-family="'OpenSans-Bold'" font-size="25.0049">DB Cursor</tspan></text>
+<text transform="matrix(1 0 0 1 345.6671 308.0001)"><tspan x="0" y="0" font-family="'OpenSans-Bold'" font-size="25.0049">Events</tspan><tspan x="-6.5" y="30" font-family="'OpenSans-Bold'" font-size="25.0049">Sockets</tspan></text>
+<text transform="matrix(1 0 0 1 329.6847 107.0001)"><tspan x="0" y="0" font-family="'OpenSans-Bold'" font-size="25.0049">setTimeOut</tspan><tspan x="14.6" y="30" font-family="'OpenSans-Bold'" font-size="25.0049">IO Events</tspan><tspan x="20.1" y="60" font-family="'OpenSans-Bold'" font-size="25.0049">API Calls</tspan></text>
+<text transform="matrix(1 0 0 1 58.2061 282)" font-family="'OpenSans-Bold'" font-size="12">now</text>
+<text transform="matrix(1 0 0 1 263.2061 49)" font-family="'OpenSans-Bold'" font-size="12">now</text>
+<text transform="matrix(1 0 0 1 467.6709 282)" font-family="'OpenSans-Bold'" font-size="12">later</text>
+<text transform="matrix(1 0 0 1 260.6709 488)" font-family="'OpenSans-Bold'" font-size="12">later</text>
+<text transform="matrix(1 0 0 1 154.9072 204)"><tspan x="0" y="0" font-family="'OpenSans-Bold'" font-size="12">arrays</tspan><tspan x="-2.5" y="14.4" font-family="'OpenSans-Bold'" font-size="12">objects</tspan><tspan x="-9.3" y="28.8" font-family="'OpenSans-Bold'" font-size="12">functions</tspan></text>
+<text transform="matrix(1 0 0 1 114.2549 394)"><tspan x="0" y="0" font-family="'OpenSans-Bold'" font-size="12">generator functions</tspan><tspan x="45.3" y="14.4" font-family="'OpenSans-Bold'" font-size="12">yeild</tspan><tspan x="33.4" y="28.8" font-family="'OpenSans-Bold'" font-size="12">iterators</tspan></text>
+<text transform="matrix(1 0 0 1 352.9834 394)"><tspan x="0" y="0" font-family="'OpenSans-Bold'" font-size="12">Observables</tspan><tspan x="12.4" y="14.4" font-family="'OpenSans-Bold'" font-size="12">Streems</tspan></text>
+<text transform="matrix(1 0 0 1 335.4727 204)"><tspan x="0" y="0" font-family="'OpenSans-Bold'" font-size="12">callback functions</tspan><tspan x="27.1" y="14.4" font-family="'OpenSans-Bold'" font-size="12">promises</tspan><tspan x="18.2" y="28.8" font-family="'OpenSans-Bold'" font-size="12">async/await</tspan></text>
+<text transform="matrix(1 0 0 1 320.9346 42.5723)" font-family="'OpenSans-Bold'" font-size="25.0049">A-Sync Code</text>
+<text transform="matrix(1 0 0 1 92.5835 42.5723)" font-family="'OpenSans-Bold'" font-size="25.0049">Sync Code</text>
+</svg>
