@@ -12,8 +12,11 @@ DELETE	/posts/1
 GET posts and populate them with comments and their user
 and return a users array with their posts and comments
 
+Do with promises Promise.all
+
+
 see https://mochajs.org/ for how mocha works
-see 
+see
 */
 
 
