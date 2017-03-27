@@ -61,10 +61,8 @@ describe("doing some promise examples", ()=>{
     this.timeout(10000)
     request.get(`/posts`).then(res=>{
       let posts = res.body
-      // console.log(posts[0]);
-      // let post = posts[0];
-      console.log(`starting to get post comments for ${posts.length} posts`);
-
+      // use with an array composed of a single post to make tracing easier
+      // let posts_comments_promise = getPostsWithComments([posts[0]])
       let posts_comments_promise = getPostsWithComments(posts)
 
       posts_comments_promise.then(posts=>{
@@ -76,6 +74,7 @@ describe("doing some promise examples", ()=>{
   })
 })
 
+// using console.log helps mapping what is happening with you async code
 function getPostsWithComments(posts) {
   return Promise.all(posts.map(post=> {
     console.log(`getting comments of post ${post.id}`);
