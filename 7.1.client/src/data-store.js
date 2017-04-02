@@ -7,9 +7,11 @@ import TodoItem from './data/TodoItem'
 
 
 const Store = new DS({
-  // create and use an http adapter instead
   adapter: new MemoryAdapter(),
   // adapter: new localStorageAdapter()
+  // create and use an http adapter instead
+  // create and use an indexDB adapter https://github.com/localForage/localForage
+  // what about an adapter that uses http but uses indexDB for caching
 })
 
 Store.registerMapper(TodoList)
