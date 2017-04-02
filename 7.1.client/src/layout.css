@@ -20,3 +20,11 @@
 .f-4 {
   flex: 4;
 }
+
+.f-center {
+  justify-content: center;
+}
+
+.f-middle {
+  align-items: center;
+}

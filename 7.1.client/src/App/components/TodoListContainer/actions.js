@@ -12,16 +12,15 @@ export const addItem = (item) => {
     item
   }
 }
-export const removeItem = (index) => {
+export const removeItem = (id) => {
   return {
     type: REMOVE_ITEM,
-    index
+    id
   }
 }
-export const toggleDone = (index, done) => {
+export const toggleDone = (item) => {
   return {
     type: TOGGLE_DONE_ITEM,
-    index,
-    done
+    item
   }
 }

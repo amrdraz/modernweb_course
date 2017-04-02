@@ -85,6 +85,9 @@
     }
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "rules": {
+      "no-use-before-define": ["off", { "functions": true, "classes": true }]
+    }
   }
 }

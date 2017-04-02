@@ -6,7 +6,7 @@ import {
 } from './actionTypes.js'
 
 
-export default (state = { todo_list_list: [], selected_list :-1 }, action) => {
+export default (state = { todo_list_list: [], selected_list : null }, action) => {
   switch(action.type) {
     case ADD_LIST:
       return {
@@ -27,25 +27,28 @@ export default (state = { todo_list_list: [], selected_list :-1 }, action) => {
   }
 }
 
-export const addList = (state = { todo_list_list: [], selected_list :-1 }, { list }) => {
+export const addList = (state = { todo_list_list: [], selected_list : null }, { list }) => {
   const { todo_list_list } = state
   return {
     todo_list_list: [...todo_list_list, list],
-    selected_list: list
+    selected_list: list,
+    items:[]
   }
 }
 
-export const selectList = (state = { todo_list_list: [], selected_list :-1 }, { list }) => {
+export const selectList = (state = { todo_list_list: [], selected_list : null }, { list, items }) => {
   return {
-    selected_list: list
+    selected_list: list,
+    items: items
   }
 }
 
 export const removeList = (state = [], {id}) => {
-  const { todo_list_list, selected_list } = state
+  const { todo_list_list, selected_list, items } = state
   let newList = todo_list_list.filter(list=> list.id!==id)
   return {
     todo_list_list: newList,
-    selected_list: selected_list.id!==id?selected_list:(newList.length?newList[0]:null)
+    selected_list: selected_list.id===id?null:selected_list,
+    items: selected_list.id===id?[]:items
   }
 }

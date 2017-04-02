@@ -44,22 +44,24 @@ export default class TodoListList extends Component {
     let title = prompt("Enter list name")
     if (title) {
       DS.create('TodoList', {
-        title, items: []
+        title
       }).then(list=>{
         StateStore.dispatch(addList(list))
       })
     }
   }
 
-  selectList = (id) => (event) => {
+  selectList = (list) => (event) => {
     event.preventDefault()
-    DS.find('TodoList', id).then(list=>{
-      StateStore.dispatch(selectList(list))
+    event.stopPropagation()
+    DS.findAll('TodoItem', { list_id: list.id }).then(items=>{
+      StateStore.dispatch(selectList(list, items))
     })
   }
 
   removeList = (id) => (event) => {
     event.preventDefault()
+    event.stopPropagation()
     DS.delete('TodoList', id).then(list=>{
       StateStore.dispatch(removeList(id))
     })

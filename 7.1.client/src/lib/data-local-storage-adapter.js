@@ -1,13 +1,12 @@
 export default class MemoryAdapter {
   constructor(config = {}) {
-    this.store = config.store || {}
+    this.store = localStorage
   }
-  // create('TodoList', {title:'', items:[]})
   _getTable(tableName) {
-    return this.store[tableName] || []
+    return JSON.parse(this.store.getItem(tableName) || "[]")
   }
   _setTable(tableName, data) {
-    return this.store[tableName] = data
+    return this.store.setItem(tableName, JSON.stringify(data))
   }
   // create('TodoList', {title:'', items:[]})
   create(tableName, data) {

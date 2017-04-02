@@ -14,10 +14,11 @@ export const addList = (list) => {
   }
 }
 
-export const selectList = (list) => {
+export const selectList = (list, items) => {
   return {
     type: SELECT_LIST,
-    list
+    list,
+    items
   }
 }
 
