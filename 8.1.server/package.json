@@ -1,0 +1,29 @@
+{
+  "name": "7.1.server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "mocha tests -R spec --bdd"
+  },
+  "author": "Amr Draz <amr.m.draz@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.3",
+    "express": "^4.15.2",
+    "lodash": "^4.17.4",
+    "mongodb": "^2.2.25",
+    "mongoose": "^4.9.2",
+    "nedb": "^1.8.0",
+    "socket.io": "^1.7.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "dotenv": "^4.0.0",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
+    "supertest": "^3.0.0"
+  }
+}
