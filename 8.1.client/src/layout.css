@@ -1,0 +1,30 @@
+.row, .col {
+  display: flex;
+}
+.row {
+  flex-direction: row;
+}
+.col {
+  flex-direction: column;
+}
+
+.f-1 {
+  flex:1;
+}
+.f-2 {
+  flex: 2;
+}
+.f-3 {
+  flex: 3;
+}
+.f-4 {
+  flex: 4;
+}
+
+.f-center {
+  justify-content: center;
+}
+
+.f-middle {
+  align-items: center;
+}
