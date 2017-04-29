@@ -1,0 +1,32 @@
+.navigation {
+  height: 94vh;
+  background-color: #3c2d3e;
+  max-width: 300px;
+}
+
+.create-list {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: white;
+  padding: .5em;
+  border-bottom: 2px solid black;
+}
+
+
+.todo-list-list__item {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+  background-color: #a06c99;
+}
+
+.todo-list-list__item:hover {
+  background-color: #ca9ec4;
+}
+
+.todo-list-list__item:hover > .todo-list-list__todo-list {
+  color: white;
+}
