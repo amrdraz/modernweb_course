@@ -2,13 +2,14 @@ import { LOAD_STATE } from './actionTypes'
 import {
   ADD_LIST,
   REMOVE_LIST,
-  SELECT_LIST,
+  LOAD_LISTS
 } from './components/TodoListListContainer/actionTypes'
 
 import {
   ADD_ITEM,
   REMOVE_ITEM,
-  TOGGLE_DONE_ITEM,
+  UPDATE_ITEM,
+  LOAD_ITEMS
 } from './components/TodoListContainer/actionTypes'
 
 import TodoListList from './components/TodoListListContainer/reducer'
@@ -18,9 +19,9 @@ export default (state = { todo_list_list:[], selected_list: undefined, items: []
   switch (action.type) {
     case LOAD_STATE:
       return action.state
-    case ADD_LIST: case REMOVE_LIST: case SELECT_LIST:
+    case ADD_LIST: case REMOVE_LIST: case LOAD_LISTS:
       return TodoListList(state, action)
-    case ADD_ITEM: case REMOVE_ITEM: case TOGGLE_DONE_ITEM:
+    case ADD_ITEM: case REMOVE_ITEM: case UPDATE_ITEM: case LOAD_ITEMS:
       return {
         ...state,
         items: TodoList(state.items, action)

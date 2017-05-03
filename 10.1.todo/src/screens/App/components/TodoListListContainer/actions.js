@@ -3,6 +3,7 @@ import {
   ADD_LIST,
   REMOVE_LIST,
   SELECT_LIST,
+  LOAD_LISTS,
 } from './actionTypes'
 
 
@@ -14,11 +15,17 @@ export const addList = (list) => {
   }
 }
 
-export const selectList = (list, items) => {
+export const loadLists = (lists) => {
+  return {
+   type: LOAD_LISTS,
+   lists
+  }
+}
+
+export const selectList = (list) => {
   return {
     type: SELECT_LIST,
-    list,
-    items
+    url: `/${list.id}`
   }
 }
 

@@ -2,7 +2,8 @@
 import {
   ADD_ITEM,
   REMOVE_ITEM,
-  TOGGLE_DONE_ITEM,
+  UPDATE_ITEM,
+  LOAD_ITEMS
 } from './actionTypes'
 
 
@@ -18,9 +19,15 @@ export const removeItem = (id) => {
     id
   }
 }
-export const toggleDone = (item) => {
+export const updateItem = (item) => {
   return {
-    type: TOGGLE_DONE_ITEM,
+    type: UPDATE_ITEM,
     item
+  }
+}
+export const loadItems = (items) => {
+  return {
+    type: LOAD_ITEMS,
+    items
   }
 }
