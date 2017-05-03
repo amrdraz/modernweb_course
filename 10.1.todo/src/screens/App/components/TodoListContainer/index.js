@@ -17,7 +17,8 @@ export default class TodoList extends Component {
     items: []
   }
   render() {
-    let { items, todo_lists, selected_list } = this.state
+    let { items, todo_lists } = this.state
+    let selected_list = this.props.match.params.list
     return (selected_list?
       <main className="col f-3">
         <CreateItem onAddItem={this.addItem.bind(this)}/>
@@ -50,13 +51,6 @@ export default class TodoList extends Component {
     if(selected_list) {
       this.items = firebase.database().ref(`todo_items/${selected_list}`)
       this.subscribeToItems(selected_list)
-      this.items.once('value', itemsSnap=>{
-        let items = itemsSnap.val()
-        StateStore.dispatch(loadItems(items?Object.keys(items).map(key => ({...items[key], id:key})):[]))
-      })
-      this.setState(()=>({
-        selected_list
-      }))
     }
     this.unsubscribeFromStateStore = StateStore.subscribe((state)=>{
       this.setState(() => ({
@@ -68,16 +62,14 @@ export default class TodoList extends Component {
   componentWillReceiveProps(nextProps){
     let selected_list = this.props.match.params.list
     let next_selected_list = nextProps.match.params.list
-    if(selected_list && selected_list !== next_selected_list) {
+    if((selected_list || next_selected_list) && selected_list !== next_selected_list) {
       if(this.items) {
         this.items.off('child_added', this.onAddItem)
         this.items.off('child_removed', this.onRemoveItem)
         this.items.off('child_changed', this.onChangeItem)
+        StateStore.dispatch(loadItems([]))
       }
       this.subscribeToItems(next_selected_list)
-      this.setState(() => ({
-        selected_list: next_selected_list
-      }))
     }
   }
   componentWillUnmount() {
@@ -100,12 +92,18 @@ export default class TodoList extends Component {
   }
 
   addItem(item) {
-    this.items.push().set(item)
+    let selected_list = this.props.match.params.list
+    let itemsSnap = firebase.database().ref(`todo_items/${selected_list}`)
+    itemsSnap.push().set(item)
   }
   removeItem = (id) => () => {
-    this.items.child(id).remove()
+    let selected_list = this.props.match.params.list
+    let itemsSnap = firebase.database().ref(`todo_items/${selected_list}`)
+    itemsSnap.child(id).remove()
   }
   toggleDone = (item) => () => {
-    this.items.child(`${item.id}/done`).set(!item.done)
+    let selected_list = this.props.match.params.list
+    let itemsSnap = firebase.database().ref(`todo_items/${selected_list}`)
+    itemsSnap.child(`${item.id}/done`).set(!item.done)
   }
 }

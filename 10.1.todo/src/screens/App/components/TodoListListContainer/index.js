@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {withRouter} from 'react-router'
 
 import StateStore from '~/src/state-store'
 
@@ -11,8 +12,9 @@ import TodoListTitle from './components/TodoListTitle'
 import './style.css'
 
 const todo_list_list = firebase.database().ref('todo_list_list');
+const todo_items = firebase.database().ref('todo_items')
 
-export default class TodoListList extends Component {
+export default withRouter(class TodoListList extends Component {
   state = {
     todo_list_list: []
   }
@@ -72,6 +74,7 @@ export default class TodoListList extends Component {
       listSnape.set({
         title
       })
+      todo_items.update({[listSnape.key]:{}})
     }
   }
 
@@ -86,7 +89,9 @@ export default class TodoListList extends Component {
     event.preventDefault()
     event.stopPropagation()
     todo_list_list.child(id).remove()
+    todo_items.child(id).remove()
+    this.props.history.push('/')
   }
 
 
-}
+})
