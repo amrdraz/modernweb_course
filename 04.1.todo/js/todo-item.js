@@ -1,4 +1,4 @@
-(function functionName(global) {
+(function (global) {
   global.TodoItem = {
       // localState: {},
       render(item) {

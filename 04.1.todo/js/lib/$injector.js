@@ -64,6 +64,10 @@
 		}
 	}
 	$injector.define = $injector.inject
+	$injector.inject = (...args) => {
+		console.warn(`inject function is depricated use define instead`);
+		$injector.define(...args)
+	}
 
 	global.$injector = $injector
 

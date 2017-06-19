@@ -24,7 +24,7 @@
         actual,
         expect,
         message: `HTML did not match`,
-        passed: expect.replace(/[\s]+/g," ")===actual.replace(/[\s]+/g," "),
+        passed: expect.replace(/[\s\n]+/g," ")===actual.replace(/[\s\n]+/g," "),
       })
 
       let runTests = () => {
@@ -35,7 +35,7 @@
           } catch (error) {
             console.error(error)
             result = assert.fail({
-              message: `An error occured while running ${test}`,
+              message: `An error occured while running ${testKey}`,
               error: error
             })
           }
@@ -85,7 +85,7 @@
               `}
             </div>
           `}
-        `)}
+        `).join("")}
       `
 
       let escapeHTMLString = (html) => html.replace(/(?:<(\w+)\s)|(?:<\/(\w+>))/gm, (m,p)=>`<<i></i>${p} `)
